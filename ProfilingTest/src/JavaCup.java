@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class JavaCup {
@@ -11,7 +12,8 @@ public class JavaCup {
         int j = scanner.nextInt();
         System.out.println("Press number3: ");
         int k = scanner.nextInt();
-        temp();
+        //temp();
+        tempOptimized();
         eval(i, j, k);
     }
     public static void eval(int i, int j, int k)
@@ -21,6 +23,8 @@ public class JavaCup {
             System.out.println("YES");
         }
         else { System.out.println("NO"); }
+
+        System.out.println("eval done!");
     }
     public static void temp() {
         ArrayList a = new ArrayList();
@@ -30,5 +34,15 @@ public class JavaCup {
                 a.add(i + j);
             }
         }
+    }
+
+    public static void tempOptimized() {
+        int[][] a = new int[10000][20000];
+        for (int i = 0; i < 10000; i++) {
+            for (int j = 0; j < 20000; j++) {
+                a[i][j] = i + j;
+            }
+        }
+        System.out.println("tempOptimized done!");
     }
 }
